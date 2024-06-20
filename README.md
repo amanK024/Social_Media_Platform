@@ -1,55 +1,111 @@
+# SocialNetwork
 
-Check out full tutorial here : https://www.youtube.com/watch?v=UbF4srCAf0c&t=139s 
-Do not forget to subscribe
+Welcome to the SocialNetwork project! This is a social networking application designed to connect people, share updates, and build communities. This README provides an overview of the project, installation instructions, usage guidelines, and more.
 
-Django 3 Social Network | Social media
+## Table of Contents
 
-1. Create project motechapp - django-admin startproject motechapp
-2. Change directory (cd motechapp)and create app core - django-admin startapp core
-3. Add core in installed app section of settings.py
-4. Install crispy form and add in installed app of settings.py
-5. Set path of static files
-6. Set path of templates files
-7. Set database
-8. Make migrations
-    - python manage.py makemigrations
-    - python manage.py migrate
-9. Run Django server
-    - python manage.py runserver
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
+## Features
 
+- **User Authentication**: Sign up, log in, and manage your profile.
+- **Post Updates**: Share text updates, images, and videos with your network.
+- **Follow System**: Follow and unfollow other users to see their posts.
+- **Like and Comment**: Engage with posts through likes and comments.
+- **Real-time Notifications**: Get notified about new likes, comments, and followers.
+- **Search Functionality**: Find users and posts with an integrated search feature.
+- **Responsive Design**: Access the platform from any device.
 
+## Prerequisites
 
-CREATING A FOLLOWER AND FOLLOWING VIA DJANGO SHELL.
+Before you begin, ensure you have met the following requirements:
 
-1. Launch Django shell - python manage.py shell
-2. Import model User - from django.contrib.auth.models import User
-3. Import model Follower - from core.models import Follower
-4. Import model Following - from core.models import Following
+- **Node.js** (v14.0.0 or later)
+- **npm** (v6.0.0 or later)
+- **MongoDB** (v4.0 or later)
+- **Git**
 
-mosesi following noel
+## Installation
 
-mosesi is a follower and noel is following
-disciple = 'mosesi' and leader = 'noel'
+1. Clone the repository:
 
+    ```bash
+    git clone https://github.com/amanK024/socialnetwork.git
+    ```
 
-follower = Follower()
-leader = User.objects.get(username='noel')
-disciple = User.objects.get(username='mosesi')
+2. Navigate to the project directory:
 
-following = Following()
-leader.follower_set.create(follower_user=disciple)
-disciple.following_set.create(following_user=leader)
+    ```bash
+    cd socialnetwork
+    ```
 
+3. Install the dependencies:
 
+    ```bash
+    npm install
+    ```
 
-CREATING A POST VIA TERMINAL
-import model Post - from core.models import Post
-a = Post(user_id=3, post_text='Hi MotechApp')
-a.save()
+4. Set up the environment variables:
 
+    Create a `.env` file in the root directory and add the following variables:
 
+    ```env
+    PORT=3000
+    MONGODB_URI=mongodb://localhost:27017/socialnetwork
+    JWT_SECRET=your_jwt_secret
+    ```
 
+5. Start the application:
 
-![alt text](https://github.com/MoTechStore/socialnetwork/blob/main/thumbnail.jpg)	
-   
+    ```bash
+    npm start
+    ```
+
+    The application will be running on `http://localhost:3000`.
+
+## Usage
+
+- **Sign Up/Log In**: Create a new account or log in with existing credentials.
+- **Create Posts**: Share updates, images, and videos with your followers.
+- **Engage**: Like and comment on posts, follow other users.
+- **Notifications**: Check your notifications for the latest updates.
+
+## Contributing
+
+We welcome contributions to the SocialNetwork project! To contribute, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+
+    ```bash
+    git checkout -b feature-branch
+    ```
+
+3. Make your changes and commit them:
+
+    ```bash
+    git commit -m 'Add some feature'
+    ```
+
+4. Push to the branch:
+
+    ```bash
+    git push origin feature-branch
+    ```
+
+5. Open a pull request.
+
+Please ensure your pull request adheres to the following guidelines:
+
+- Clear description of the changes and why they are necessary.
+- Properly formatted code with comments where necessary.
+- Pass all tests and ensure no conflicts with the base branch.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
